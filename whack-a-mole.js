@@ -110,11 +110,17 @@ function triggerCountdown() {
 function stopGame() {
     if (score === 10) {
     document.querySelector(".game-over").classList.add("winner", "isActive");
+    window.setTimeout(() => {
+      window.location.reload();
+    }, 7000);
+    mole.classList.remove('moleAppearing');
   }
   else if ((score < 10) && (numberClicks > clickCeiling)) {
     document.querySelector(".game-over").classList.add("loser", "isActive");
+    window.setTimeout(() => {
+      window.location.reload();
+    }, 7000);
   }
-  mole.classList.remove('moleAppearing');
 }
 
 // function that triggers the music when game starts:
